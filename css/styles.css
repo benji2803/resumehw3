@@ -1,0 +1,60 @@
+/* HW7 Resume Site - Benjamin Maldonado */
+/* Global box model fix */
+html { box-sizing: border-box; }
+*, *::before, *::after { box-sizing: inherit; }
+
+body {
+  margin: 0;
+  background: #F7F4F8;
+  color: #2B2030;
+  font-family: "Open Sans", Arial, sans-serif;
+  line-height: 1.6;
+}
+h1, h2, h3 { font-family: "Montserrat", Arial, sans-serif; }
+h1 { font-size: 38px; }
+h2 { font-size: 28px; margin-top: 0; }
+h3 { font-size: 21px; }
+.content-wrap {
+  max-width: 950px;
+  margin: 0 auto;
+  padding: 50px;
+  overflow: hidden;
+}
+/* HW7 final reusable float-based columns */
+.column-narrow {
+  width: 30%;
+  float: left;
+  padding-right: 3%;
+  min-height: 175px;
+}
+.column-wide {
+  width: 70%;
+  float: left;
+  min-height: 225px;
+}
+/* Header */
+header { background: #E9E0EE; }
+header h1, header h2 { margin: 0; }
+header h2 { color: #6F4B7B; }
+.profile-img {
+  /* Preserve HW7's 30% floated column while making the portrait circular. */
+  display: block;
+  aspect-ratio: 1 / 1;
+  height: auto;
+  object-fit: cover;
+  object-position: center 38%;
+  border-radius: 50%;
+  border: 4px solid #6F4B7B;
+  padding: 0;
+}
+/* Work experience */
+.work-experience { background: #F3EDF6; }
+.work-experience h2, .work-experience h3 { color: #5A3C65; }
+.job-entry::after { content: ""; display: table; clear: both; }
+/* Education */
+.education { background: #EDE5F1; }
+.education h2, .education h3 { color: #5A3C65; }
+/* Footer */
+footer { background: #DCCFE5; text-align: center; }
+footer a { color: #5A3C65; font-weight: 600; }
+.contact-info a { padding: 10px; display: inline-block; }
