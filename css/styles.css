@@ -1,0 +1,147 @@
+/* HW8: formatted for readability */
+* {
+  box-sizing:border-box}
+
+html {
+  scroll-behavior:smooth}
+
+body {
+  margin:0;
+  background:#f7f4f8;
+  color:#2b2030;
+  font-family:Arial,sans-serif;
+  line-height:1.65}
+
+h1,h2,h3 {
+  font-family:Arial,sans-serif}
+
+h1 {
+  font-size:38px}
+
+h2 {
+  font-size:28px;
+  margin-top:0}
+
+h3 {
+  font-size:21px;
+  color:#5a3c65}
+
+.wrap {
+  max-width:1000px;
+  margin:auto;
+  padding:55px 35px}
+
+nav {
+  position:sticky;
+  top:0;
+  z-index:10;
+  background:#38243f;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:8px;
+  padding:12px;
+  box-shadow:0 3px 12px #38243f30}
+
+nav a {
+  color:white;
+  text-decoration:none;
+  font-weight:600;
+  padding:8px 13px;
+  border-radius:5px}
+
+nav a:hover,nav a:focus-visible {
+  background:#755483}
+
+nav .download {
+  background:#e9dceb;
+  color:#302035}
+
+section,header,footer {
+  scroll-margin-top:100px}
+
+header {
+  background:#e9e0ee}
+
+.intro {
+  display:grid;
+  grid-template-columns:28% 1fr;
+  gap:35px;
+  align-items:center}
+
+.portrait {
+  width:100%;
+  aspect-ratio:1;
+  object-fit:cover;
+  object-position:center 38%;
+  border:4px solid #6f4b7b;
+  border-radius:50%}
+
+header h1,header h2 {
+  margin:0}
+
+header h2 {
+  color:#6f4b7b;
+  font-size:22px}
+
+.experience {
+  background:linear-gradient(rgba(248,243,250,.94),rgba(233,223,240,.91)),url('../images/background.svg') center/cover no-repeat}
+
+.job {
+  display:grid;
+  grid-template-columns:30% 1fr;
+  gap:25px}
+
+.education {
+  background:#ede5f1}
+
+footer {
+  background:#dccfe5;
+  text-align:center}
+
+.contact {
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:20px}
+
+.contact a {
+  color:#5a3c65;
+  font-weight:600;
+  text-decoration:none}
+
+.contact i {
+  margin-right:6px}
+
+@media(max-width:650px) {
+  .wrap {
+  padding:35px 22px}
+
+.intro,.job {
+  grid-template-columns:1fr}
+
+.portrait {
+  width:190px;
+  margin:auto}
+
+h1 {
+  font-size:30px}
+
+nav {
+  gap:2px;
+  padding:7px}
+
+nav a {
+  font-size:13px;
+  padding:6px}
+
+section,header,footer {
+  scroll-margin-top:140px}
+
+}
+
+@media(prefers-reduced-motion:reduce) {
+  html {
+  scroll-behavior:auto}
+
+}
