@@ -84,8 +84,17 @@ header h2 {
   color:#6f4b7b;
   font-size:22px}
 
+/* HW8: Image stays anchored at the BOTTOM of the experience section.
+   The RGBA overlay preserves readability while showing the image below. */
 .experience {
-  background:linear-gradient(rgba(248,243,250,.94),rgba(233,223,240,.91)),url('../images/background.svg') center/cover no-repeat}
+  background-image:
+    linear-gradient(to bottom, rgba(248, 243, 250, 0.96), rgba(233, 223, 240, 0.65)),
+    url('../images/background.svg');
+  background-position: center bottom, center bottom;
+  background-size: cover, cover;
+  background-repeat: no-repeat;
+  background-color: #ede5f1;
+}
 
 .job {
   display:grid;
