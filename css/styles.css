@@ -85,26 +85,26 @@ header h2 { color: #6f4b7b; font-size: 22px; }
 }
 .job:last-child { margin-bottom: 0; }
 
-/* HW8 STEP 3: Show the background IMAGE at the BOTTOM of Education.
-   Layer 1: RGBA gradient for text readability, fading to transparent below.
-   Layer 2: SVG illustration, positioned at center bottom of Education.
-   background-size reserves a visible 170px decorative band.
-   IMPORTANT: Do not put 'fixed' after url() inside background-image.
-   background-attachment: scroll means the image belongs to this section,
-   not to the viewport. This preserves the professor's background requirement. */
+/* HW8 STEP 3: Fixed, bottom-aligned background behind EDUCATION.
+   The first layer is an RGBA gradient for readable text and scrolls normally.
+   The second layer is the purple SVG, anchored to the bottom of the VIEWPORT.
+   'background-attachment: scroll, fixed' produces the scroll/parallax effect:
+   the section moves over the image as the visitor scrolls.
+   The image is only shown where the Education section is visible.
+   Do NOT put the word 'fixed' inside the background-image url() value. */
 .education {
   background-color: #ede5f1;
   background-image:
     linear-gradient(to bottom,
-      rgba(237, 229, 241, 1) 0%,
-      rgba(237, 229, 241, 0.94) 52%,
-      rgba(237, 229, 241, 0.08) 100%
+      rgba(237, 229, 241, 0.97) 0%,
+      rgba(237, 229, 241, 0.80) 48%,
+      rgba(237, 229, 241, 0.10) 100%
     ),
     url('../images/background.svg');
   background-position: center center, center bottom;
-  background-size: 100% 100%, 100% 170px;
+  background-size: 100% 100%, 100% 200px;
   background-repeat: no-repeat, no-repeat;
-  background-attachment: scroll, scroll;
+  background-attachment: scroll, fixed;
 }
 
 /* HW7: Center footer and contact links. */
@@ -132,7 +132,11 @@ footer { background: #dccfe5; text-align: center; }
   nav { gap: 2px; padding: 7px; }
   nav a { font-size: 13px; padding: 6px; }
   section, header, footer { scroll-margin-top: 140px; }
-  .education { background-size: 100% 100%, 100% 120px; }
+  /* Fixed backgrounds can be unsupported on mobile browsers; show a normal image. */
+  .education {
+    background-size: 100% 100%, 100% 140px;
+    background-attachment: scroll, scroll;
+  }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
