@@ -1,6 +1,12 @@
-/* HW8 resume — readable, formatted CSS */
+/* RESUME SITE CSS — annotated by assignment (HW6 / HW7 / HW8).
+   These comments explain existing code; they do not change the site appearance. */
+/* HW7 STEP 5: Border-box keeps padding and borders inside assigned element widths. */
 * { box-sizing: border-box; }
+/* HW8 STEP 1B: Smooth transitions when jumping to linked page sections. */
 html { scroll-behavior: smooth; }
+/* HW6 STEP 4: Light-purple site color palette; basic type and readability.
+   HW7 STEP 3D: Remove browser default body margin so section colors reach the edges.
+   Note: Current page uses Arial, not the Google Fonts requested in the original HW6 lab. */
 body {
   margin: 0;
   background: #f7f4f8;
@@ -8,11 +14,16 @@ body {
   font-family: Arial, sans-serif;
   line-height: 1.65;
 }
+/* HW6 STEPS 6-7: Consistent font styling and heading hierarchy. */
 h1, h2, h3 { font-family: Arial, sans-serif; }
 h1 { font-size: 38px; }
 h2 { font-size: 28px; margin-top: 0; }
 h3 { font-size: 21px; color: #5a3c65; }
+/* HW7 STEPS 1-3: Center content with max-width and shared interior padding.
+   .wrap is the current site equivalent of the lecture .content-wrap. */
 .wrap { max-width: 1000px; margin: auto; padding: 55px 35px; }
+/* HW8 STEP 1: Sticky, list-free menu. top: 0 pins it at viewport top while scrolling.
+   z-index keeps it above the resume content. */
 nav {
   position: sticky;
   top: 0;
@@ -25,6 +36,7 @@ nav {
   padding: 12px;
   box-shadow: 0 3px 12px #38243f30;
 }
+/* HW8 STEP 1: Style each anchor link like a navigation item. */
 nav a {
   color: white;
   text-decoration: none;
@@ -33,15 +45,22 @@ nav a {
   border-radius: 5px;
 }
 nav a:hover, nav a:focus-visible { background: #755483; }
+/* HW8 STEP 1D: Highlight the PDF download anchor. */
 nav .download { background: #e9dceb; color: #302035; }
-section, header, footer { scroll-margin-top: 100px; }
+/* HW8 STEP 1B: Offset anchor scrolling so sticky nav does not hide headings. */
+section, header, /* HW7 STEP 3E: Center contact information and footer text. */
+footer { scroll-margin-top: 100px; }
+/* HW6 STEP 4: Header has its own background color from our palette. */
 header { background: #e9e0ee; }
+/* HW7 STEP 6 (adapted): Side-by-side portrait and introduction.
+   This version uses CSS Grid instead of the original lesson floats. */
 .intro {
   display: grid;
   grid-template-columns: 28% 1fr;
   gap: 35px;
   align-items: center;
 }
+/* HW7 STEP 4: Circular portrait using border-radius and object-fit. */
 .portrait {
   width: 100%;
   aspect-ratio: 1;
@@ -65,13 +84,17 @@ header h2 { color: #6f4b7b; font-size: 22px; }
   background-size: 100% 100%, 100% 210px;
   background-repeat: no-repeat, no-repeat;
 }
+/* HW7 STEP 6 (adapted): Role details left and responsibility text right.
+   Grid adapts the original two-column float exercise. */
 .job {
   display: grid;
   grid-template-columns: 30% 1fr;
   gap: 25px;
 }
+/* HW6 STEP 4: Education section background from the color palette. */
 .education { background: #ede5f1; }
 footer { background: #dccfe5; text-align: center; }
+/* HW7 STEP 3F-3G (adapted): Space contact links side by side with Flexbox. */
 .contact {
   display: flex;
   flex-wrap: wrap;
@@ -83,7 +106,10 @@ footer { background: #dccfe5; text-align: center; }
   font-weight: 600;
   text-decoration: none;
 }
+/* HW8 STEP 2: Add breathing room between Font Awesome icons and labels. */
 .contact i { margin-right: 6px; }
+/* HW7 STEP 2C: Keep layout usable at narrower browser widths.
+   Responsive enhancement: columns collapse to one column on phones. */
 @media (max-width: 650px) {
   .wrap { padding: 35px 22px; }
   .intro, .job { grid-template-columns: 1fr; }
@@ -94,6 +120,7 @@ footer { background: #dccfe5; text-align: center; }
   section, header, footer { scroll-margin-top: 140px; }
   .experience { background-size: 100% 100%, 100% 165px; }
 }
+/* Accessibility: respect visitors who prefer reduced animation. */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
 }
