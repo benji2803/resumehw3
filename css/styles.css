@@ -83,6 +83,7 @@ header h2 { color: #6f4b7b; font-size: 22px; }
   background-position: center center, center bottom;
   background-size: 100% 100%, 100% 210px;
   background-repeat: no-repeat, no-repeat;
+  background-attachment: fixed;
 }
 /* HW7 STEP 6 (adapted): Role details left and responsibility text right.
    Grid adapts the original two-column float exercise. */
