@@ -79,7 +79,7 @@ header h2 { color: #6f4b7b; font-size: 22px; }
   background-color: #ede5f1;
   background-image:
     linear-gradient(to bottom, rgba(248, 243, 250, 0.96) 0%, rgba(233, 223, 240, 0.78) 70%, rgba(233, 223, 240, 0.30) 100%),
-    url('../images/background.svg');
+    url('../images/background.svg') center/cover no-repeat;
   background-position: center center, center bottom;
   background-size: 100% 100%, 100% 210px;
   background-repeat: no-repeat, no-repeat;
