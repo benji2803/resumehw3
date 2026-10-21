@@ -85,25 +85,26 @@ header h2 { color: #6f4b7b; font-size: 22px; }
 }
 .job:last-child { margin-bottom: 0; }
 
-/* HW8 STEP 3: Background IMAGE is on the EDUCATION (bottom) section.
-   The first background layer is an RGBA gradient for readable text.
-   The second layer is the purple SVG positioned at CENTER BOTTOM.
-   The image uses a 135px-high band instead of covering the whole section.
-   background-attachment is NOT fixed: the image stays with Education.
-   No extra bottom padding is added, avoiding a giant empty gap. */
+/* HW8 STEP 3: Show the background IMAGE at the BOTTOM of Education.
+   Layer 1: RGBA gradient for text readability, fading to transparent below.
+   Layer 2: SVG illustration, positioned at center bottom of Education.
+   background-size reserves a visible 170px decorative band.
+   IMPORTANT: Do not put 'fixed' after url() inside background-image.
+   background-attachment: scroll means the image belongs to this section,
+   not to the viewport. This preserves the professor's background requirement. */
 .education {
   background-color: #ede5f1;
   background-image:
     linear-gradient(to bottom,
       rgba(237, 229, 241, 1) 0%,
-      rgba(237, 229, 241, 0.98) 58%,
-      rgba(237, 229, 241, 0.18) 100%
+      rgba(237, 229, 241, 0.94) 52%,
+      rgba(237, 229, 241, 0.08) 100%
     ),
-    url('../images/background.svg') fixed;
+    url('../images/background.svg');
   background-position: center center, center bottom;
-  background-size: 100% 100%, 100% 135px;
-  background-repeat: no-repeat;
-  background-attachment: scroll;
+  background-size: 100% 100%, 100% 170px;
+  background-repeat: no-repeat, no-repeat;
+  background-attachment: scroll, scroll;
 }
 
 /* HW7: Center footer and contact links. */
@@ -131,7 +132,7 @@ footer { background: #dccfe5; text-align: center; }
   nav { gap: 2px; padding: 7px; }
   nav a { font-size: 13px; padding: 6px; }
   section, header, footer { scroll-margin-top: 140px; }
-  .education { background-size: 100% 100%, 100% 100px; }
+  .education { background-size: 100% 100%, 100% 120px; }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
