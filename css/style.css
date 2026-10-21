@@ -99,7 +99,7 @@ header h2 { color: #6f4b7b; font-size: 22px; }
       rgba(237, 229, 241, 0.98) 58%,
       rgba(237, 229, 241, 0.18) 100%
     ),
-    url('../images/background.svg');
+    url('../images/background.svg') fixed;
   background-position: center center, center bottom;
   background-size: 100% 100%, 100% 135px;
   background-repeat: no-repeat;
